@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: model-training-deployment
+spec:
+  replicas: 1  # Set the desired number of replicas (pods) for your training component
+  selector:
+    matchLabels:
+      app: model-training
+  template:
+    metadata:
+      labels:
+        app: model-training
+    spec:
+      containers:
+        - name: model-training-container
+          image: apache/spark-py  # Specify the Docker image
+          command: ["/opt/spark/bin/spark-submit", "real_estate.py"]  # Specify the command to run spark-submit
+          volumeMounts:
+            - name: models-volume
+              mountPath: /models  # Mount the volume for storing the model file
+          resources:
+            requests:
+              memory: "4Gi"  # Set the resource requirements based on your needs
+              cpu: "2"
+            limits:
+              memory: "8Gi"
+              cpu: "4"
+          # Install any additional dependencies if required
+          # Set the working directory
+          workingDir: /root/project
+      volumes:
+        - name: models-volume
+          emptyDir: {}  # Create an empty volume for storing the model file

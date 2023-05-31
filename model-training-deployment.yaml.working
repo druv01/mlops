@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: model-training-deployment
+spec:
+  replicas: 1  # Set the desired number of replicas (pods) for your training component
+  selector:
+    matchLabels:
+      app: model-training
+  template:
+    metadata:
+      labels:
+        app: model-training
+    spec:
+      containers:
+        - name: model-training-container
+          image: trsanthosh/real_estate_train  # Replace with the name of your custom image
+          volumeMounts:
+            - name: models-volume
+              mountPath: /models  # Mount the volume for storing the model file
+            - name: data-volume
+              mountPath: /data  # Mount the volume for storing the model file
+          resources:
+            requests:
+              memory: "1Gi"  # Set the resource requirements based on your needs
+              cpu: "0.5"
+            limits:
+              memory: "2Gi"
+              cpu: "1"
+      volumes:
+        - name: models-volume
+          hostPath: 
+            path: /models
+        - name: data-volume
+          hostPath:  
+            path: /root/project/data

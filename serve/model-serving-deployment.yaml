@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: model-serving-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: model-serving
+  template:
+    metadata:
+      labels:
+        app: model-serving
+    spec:
+      containers:
+        - name: model-serving-container
+          image: trsanthosh/real_estate_serve:latest
+          volumeMounts:
+            - name: models-volume
+              mountPath: /models
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "0.5"
+            limits:
+              memory: "4Gi"
+              cpu: "2"
+      volumes:
+        - name: models-volume
+          hostPath:
+            path: /models
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: model-serving-service
+spec:
+  selector:
+    app: model-serving
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000

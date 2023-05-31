@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: model-training-cronjob
+spec:
+  schedule: "*/10 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never  # Set the restart policy to "OnFailure" or "Never"
+          containers:
+            - name: model-training-container
+              image: trsanthosh/real_estate_train
+              volumeMounts:
+                - name: models-volume
+                  mountPath: /models
+                - name: data-volume
+                  mountPath: /data
+          volumes:
+            - name: models-volume
+              hostPath:
+                path: /models
+            - name: data-volume
+              hostPath:
+                path: /root/project/data

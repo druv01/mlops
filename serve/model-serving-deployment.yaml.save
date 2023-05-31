@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: model-serving-deployment
+spec:
+  replicas: 1  # Set the desired number of replicas (pods) for your serving component
+  selector:
+    matchLabels:
+      app: model-serving
+  template:
+    metadata:
+      labels:
+        app: model-serving
+    spec:
+      containers:
+        - name: model-serving-container
+          image: your-custom-image:tag  # Update this line with your custom image name and tag
+          volumeMounts:
+            - name: models-volume
+              mountPath: /models  # Mount the volume for storing the model file
+          ports:
+            - containerPort: 8000  # Expose the application port
+          resources:
+            requests:
+              memory: "4Gi"  # Set the resource requirements based on your needs
+              cpu: "2"
+            limits:
+              memory: "8Gi"
+              cpu: "4"
+          # ...
