@@ -9,14 +9,14 @@ def model_training_pipeline():
     data_preprocessing = dsl.ContainerOp(
         name='data-preprocessing',
         image='trsanthosh/data-preprocessing',
-        command=['python', '/data_preprocessing_script.py'],
+        command=['python', '/real_estate.py'],
         pvolumes={'data-volume': k8s_client.V1Volume(volume_source=k8s_client.V1VolumeSource(host_path=k8s_client.V1HostPathVolumeSource(path='/data')))}
     )
     
     model_training = dsl.ContainerOp(
         name='model-training',
         image='trsanthosh/model-training',
-        command=['python', '/model_training_script.py'],
+        command=['python', '/real_estate.py'],
         pvolumes={'models-volume': k8s_client.V1Volume(volume_source=k8s_client.V1VolumeSource(host_path=k8s_client.V1HostPathVolumeSource(path='/models')))}
     )
     model_training.after(data_preprocessing)
@@ -24,13 +24,13 @@ def model_training_pipeline():
     model_evaluation = dsl.ContainerOp(
         name='model-evaluation',
         image='trsanthosh/model-evaluation',
-        command=['python', '/model_evaluation_script.py'],
+        command=['python', '/real_estate.py'],
         pvolumes={'models-volume': k8s_client.V1Volume(volume_source=k8s_client.V1VolumeSource(host_path=k8s_client.V1HostPathVolumeSource(path='/models')))}
     )
     model_evaluation.after(model_training)
 
 # Create an experiment
-experiment_name = '<experiment_name>'
+experiment_name = 'real_estate'
 client = kfp.Client()
 experiment = client.create_experiment(name=experiment_name)
 
