@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: model-training-pipeline-
+spec:
+  entrypoint: model-training
+  templates:
+    - name: model-training
+      steps:
+        - - name: data-preprocessing
+            template: data-preprocessing
+        - - name: model-training
+            template: model-training
+            dependencies: [data-preprocessing]
+        - - name: model-evaluation
+            template: model-evaluation
+            dependencies: [model-training]
+    - name: data-preprocessing
+      container:
+        image: trsanthosh/data-preprocessing
+        volumeMounts:
+          - name: data-volume
+            mountPath: /data
+    - name: model-training
+      container:
+        image: trsanthosh/model-training
+        volumeMounts:
+          - name: models-volume
+            mountPath: /models
+    - name: model-evaluation
+      container:
+        image: trsanthosh/model-evaluation
+        volumeMounts:
+          - name: models-volume
+            mountPath: /models
+  volumes:
+    - name: models-volume
+      hostPath:
+        path: /models
+    - name: data-volume
+      hostPath:
+        path: ./data
