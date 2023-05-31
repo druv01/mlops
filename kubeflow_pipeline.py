@@ -1,3 +1,4 @@
+import kfp
 import kfp.dsl as dsl
 from kubernetes import client as k8s_client
 
