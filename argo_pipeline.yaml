@@ -21,16 +21,22 @@ spec:
         volumeMounts:
           - name: data-volume
             mountPath: /data
+          - name: models-volume
+            mountPath: /models
     - name: model-training
       container:
         image: trsanthosh/real_estate_train
         volumeMounts:
+          - name: data-volume
+            mountPath: /data        
           - name: models-volume
             mountPath: /models
     - name: model-evaluation
       container:
         image: trsanthosh/real_estate_train
         volumeMounts:
+          - name: data-volume
+            mountPath: /data
           - name: models-volume
             mountPath: /models
   volumes:
@@ -39,4 +45,4 @@ spec:
         path: /models
     - name: data-volume
       hostPath:
-        path: ./data
+        path: /root/project/data
