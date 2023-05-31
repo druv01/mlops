@@ -17,19 +17,19 @@ spec:
             dependencies: [model-training]
     - name: data-preprocessing
       container:
-        image: trsanthosh/data-preprocessing
+        image: trsanthosh/real_estate_train
         volumeMounts:
           - name: data-volume
             mountPath: /data
     - name: model-training
       container:
-        image: trsanthosh/model-training
+        image: trsanthosh/real_estate_train
         volumeMounts:
           - name: models-volume
             mountPath: /models
     - name: model-evaluation
       container:
-        image: trsanthosh/model-evaluation
+        image: trsanthosh/real_estate_train
         volumeMounts:
           - name: models-volume
             mountPath: /models
