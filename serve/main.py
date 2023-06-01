@@ -18,6 +18,10 @@ class PredictionRequest(BaseModel):
 class PredictionResponse(BaseModel):
     prediction: float
 
+@app.get("/")
+def home():
+    return "Real estate predictions"
+
 @app.post('/predict', response_model=PredictionResponse)
 def predict(request: PredictionRequest):
     # Get the input data from the request
