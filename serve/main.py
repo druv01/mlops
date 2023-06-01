@@ -13,7 +13,11 @@ model = LinearRegressionModel.load("/models/real_estate_model")
 spark = SparkSession.builder.getOrCreate()
 
 class PredictionRequest(BaseModel):
-    sqft: float
+    area: float
+    bedrooms: int
+    bathrooms: int
+    stories: int
+    parking: int
 
 class PredictionResponse(BaseModel):
     prediction: float
@@ -24,14 +28,20 @@ def home():
 
 @app.post('/predict', response_model=PredictionResponse)
 def predict(request: PredictionRequest):
+    input_cols = ["area", "bedrooms", "bathrooms", "stories", "parking"]
+    
     # Get the input data from the request
-    sqft = request.sqft
+    area = request.area
+    bedrooms = request.bedrooms
+    bathrooms = request.bathrooms
+    stories = request.stories
+    parking = request.parking
 
     # Create a DataFrame from the input data
-    input_data = spark.createDataFrame([(sqft,)], ["sqft"])
+    input_data = spark.createDataFrame([(area, bedrooms, bathrooms, stories, parking)], input_cols)
 
     # Assemble features
-    assembler = VectorAssembler(inputCols=["sqft"], outputCol="features")
+    assembler = VectorAssembler(inputCols=input_cols, outputCol="features")
     input_data = assembler.transform(input_data)
 
     # Make predictions
@@ -42,3 +52,4 @@ def predict(request: PredictionRequest):
 
     # Return the prediction as a response
     return PredictionResponse(prediction=prediction)
+
