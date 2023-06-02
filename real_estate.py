@@ -21,6 +21,9 @@ def linearRegression(train_df):
     # Fit the model to the training DataFrame
     model = lr.fit(train_df)
 
+    # Save the model with overwrite
+    model.write().overwrite().save("/models/real_estate_model")
+
     return model, assembler
 
 def evaluateModel(model, assembler, test_df):

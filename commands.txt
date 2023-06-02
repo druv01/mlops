@@ -1,0 +1,13 @@
+  514  kubectl apply -f model-training-deployment.yaml
+  515  kubectl apply -f model-training-deployment.yaml --force
+  516  kubectl delete cronjob model-training-cronjob
+  517  kubectl apply -f model-training-deployment.yaml
+  518  kubectl get cronjobs
+  519  kubectl get jobs
+  520  kubectl describe job model-training-cronjob-28094080
+  521  kubectl kubectl logs model-training-cronjob-28094080-lfx98
+  522  kubectl logs model-training-cronjob-28094080-lfx98
+  523  kubectl get deployments
+  524  kubectl get pods
+  525  kubectl get services
+  526  curl -X POST -H "Content-Type: application/json" -d '{"sqft": 1000}' http://10.107.90.82:8000/predict
