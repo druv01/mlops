@@ -23,6 +23,8 @@ def linearRegression(train_df):
 
     # Save the model with overwrite
     model.write().overwrite().save("/models/real_estate_model")
+    print("Model saved at /models/real_estate_model")
+
 
     return model, assembler
 
