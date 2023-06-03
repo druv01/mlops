@@ -18,5 +18,5 @@ VOLUME /models
 # Create a volume mount to store the data file
 VOLUME /data
 
-# Specify the command to run spark-submit
-CMD ["/opt/spark/bin/spark-submit", "pre-processing.py", "train.py", "test.py"]
+# Specify the command to run your Python file
+CMD ["python3", "your_python_file.py"]
