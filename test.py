@@ -41,5 +41,8 @@ def main():
     # Evaluate the model
     evaluateModel(loadModel(), df)
 
+    print("Testing the model is completed")
+
+
 if __name__ == "__main__":
     main()

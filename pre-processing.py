@@ -35,5 +35,7 @@ def main():
     # Save the preprocessed data as a CSV file
     saveAsCSV(preprocessed_df, "/data/real_estate_preprocessed.csv")
 
+    print("Pre-processing is completed")
+
 if __name__ == "__main__":
     main()
