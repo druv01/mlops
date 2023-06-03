@@ -19,4 +19,4 @@ VOLUME /models
 VOLUME /data
 
 # Specify the command to run your Python file
-CMD ["python3", "your_python_file.py"]
+CMD ["python3", "ml_pipeline.py"]
