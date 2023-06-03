@@ -10,7 +10,7 @@ RUN pip install numpy matplotlib pandas
 WORKDIR /root/project
 
 # Copy the python files to the container
-COPY pre-processing.py train.py test.py .
+COPY pre-processing.py train.py test.py ml_pipeline.py .
 
 # Create a volume mount to store the model file
 VOLUME /models
