@@ -1,0 +1,500 @@
+    2  git pull
+    3  cat argo_pipeline.yaml
+    4  argo
+    5  k0s argo submit argo_pipeline.yaml
+    6  # Download the binary
+    7  curl -sLO https://github.com/argoproj/argo-workflows/releases/download/v3.4.8/argo-linux-amd64.gz
+    8  # Unzip
+    9  gunzip argo-linux-amd64.gz
+   10  # Make binary executable
+   11  chmod +x argo-linux-amd64
+   12  # Move binary to path
+   13  mv ./argo-linux-amd64 /usr/local/bin/argo
+   14  # Test installation
+   15  argo version
+   16  k0s kubectl create namespace argo
+   17  k0s kubectl apply -n argo -f https://github.com/argoproj/argo-workflows/releases/download/v3.4.8/install.yaml
+   18  k0s argo submit argo_pipeline.yaml
+   19  k0s kubectl argo submit argo_pipeline.yaml
+   20  pip install kfp
+   21  pip3 install kfp
+   22  sudo apt-get install python3-pip
+   23  python3 --version
+   24  pip3 install kfp
+   25  git pull
+   26  ls
+   27  python3 kubeflow_pipeline.py
+   28  pip3 install kfp
+   29  python3 kubeflow_pipeline.py
+   30  git pull
+   31  python3 kubeflow_pipeline.py
+   32  exit
+   33  cd project
+   34  pip install kubernetes
+   35  ls
+   36  python3 kubeflow_pipeline.py
+   37  k0s kubectl cluster-info
+   38  cat ~/.kube/config
+   39  find / -name config
+   40  ls /var/lib/k0s/
+   41  export KUBECONFIG=$PWD/kubeconfig.yaml
+   42  ls /var/lib/k0s/
+   43  k0s kubeconfig get --admin > kubeconfig.yaml
+   44  ls /var/lib/k0s/kubeconfig.yaml
+   45  k0s kubectl config view
+   46  ls /etc/k0s
+   47  sudo find / -name kubeconfig.yaml
+   48  cat /root/project/kubeconfig.yaml
+   49  k0s kubeconfig create
+   50  k0s kubeconfig create root
+   51  ls /etc/k0s
+   52  k0s kubectl config view
+   53  ls /var/lib/k0s/kubeconfig.yaml
+   54  sudo find / -name kubeconfig.yaml
+   55  ls  ./k0s.yaml
+   56  sudo find / -name k0s.yaml
+   57  ls /run/k0s/k0s.yaml
+   58  cat /run/k0s/k0s.yaml
+   59  unset KUBECONFIG
+   60  sudo find / -name k0s.yaml
+   61  python3 kubeflow_pipeline.py
+   62  clear
+   63  cat /run/k0s/k0s.yaml
+   64  sudo find / -name kubeconfig.yaml
+   65  k0s kubectl get nodes
+   66  export KUBECONFIG=$HOME/.kube/k0s.yaml
+   67  k0s kubectl get nodes
+   68  unset KUBECONFIG
+   69  k0s kubectl get nodes
+   70  ls /root/.kube/k0s.yaml
+   71  ls /root/kube/k0s.yaml
+   72  cat /run/k0s/k0s.yaml
+   73  export KUBECONFIG=/run/k0s/k0s.yaml
+   74  k0s kubectl get nodes
+   75  kubectl get nodes --kubeconfig=/run/k0s/k0s.yaml
+   76  k0s kubectl get nodes --kubeconfig=/run/k0s/k0s.yaml
+   77  unset KUBECONFIG
+   78  k0s kubectl get nodes
+   79  k0s kubeconfig admin
+   80  k0s kubectl get nodes
+   81  sudo find / -name kubeconfig.yaml
+   82  python3 kubeflow_pipeline.py
+   83  k0s kubectl get nodes
+   84  ls
+   85  cat kubeconfig.yaml
+   86  clear
+   87  ls
+   88  cat /run/k0s/k0s.yaml
+   89  ls /run/k0s/
+   90  ls /var/lib/k0s/
+   91  cat /var/lib/k0s/kubelet-config.yaml
+   92  root@mlops:~/project# echo $KUBECONFIG
+   93  ls
+   94  root/project# echo $KUBECONFIG
+   95  /root/project# echo $KUBECONFIG
+   96  pwd
+   97  /root/project echo $KUBECONFIG
+   98  cat kubeconfig.yaml
+   99  rm kubeconfig.yaml
+  100  k0s kubeconfig root
+  101  k0s kubeconfig create
+  102  k0s kubeconfig create root
+  103  k0s kubeconfig root
+  104  k0s kubeconfig admin
+  105  sudo find / -name kubeconfig.yaml
+  106  ls /var/lib/k0s/
+  107  cat /var/lib/k0s/kubelet-config.yaml
+  108  ls ~/.kube/config
+  109  ls ~/kube/config
+  110  echo $KUBECONFIG
+  111  k0s kubectl config view
+  112  ls ~/.kube/config
+  113  ls /var/lib/k0s/
+  114  sudo find / -name kubeconfig*
+  115  cat var/lib/k0s/kubelet/pods/8e82620c-0d17-40e4-b0ec-559755f21dde/volumes/kubernetes.io~configmap/kube-proxy/kubeconfig.conf
+  116  k0s kubeconfig admin > ~/.kube/config
+  117  sudo find / -name kubeconfig*
+  118  cat ~/.kube/config
+  119  export KUBECONFIG=~/.kube/config
+  120  kubectl get nodes
+  121  k0s kubectl get nodes
+  122  ls
+  123  python3 kubeflow_pipeline.py
+  124  k0s kubectl get services
+  125  python3 kubeflow_pipeline.py
+  126  cd project
+  127  python3 kubeflow_pipeline.py
+  128  cd project
+  129  kfp config set host localhost
+  130  kfp --help
+  131  kfp config set host localhost
+  132  kfp --help
+  133  cat kubeflow_pipeline.py
+  134  rm kubeflow_pipeline.py
+  135  nano  kubeflow_pipeline.py
+  136  python  kubeflow_pipeline.py
+  137  python3  kubeflow_pipeline.py
+  138  kfp deploy -f https://github.com/kubeflow/pipelines/releases/latest/download/kfp.tar.gz
+  139  kfp --help
+  140  kfp deploy -f https://github.com/kubeflow/pipelines/releases/latest/download/kfp.tar.gz
+  141  export PIPELINE_VERSION=1.8.5
+  142  kubectl apply -k "github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_VERSION"
+  143  k0s kubectl apply -k "github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_V
+  144  k0s kubectl wait --for condition=established --timeout=60s crd/applications.app.k8s.io
+  145  k0s kubectl apply -k "github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-pns?ref=$PIPELINE_VERSION"
+  146  k03 kubectl port-forward -n kubeflow svc/ml-pipeline-ui 8080:80
+  147  k0s kubectl port-forward -n kubeflow svc/ml-pipeline-ui 8080:80
+  148  k0s get pods
+  149  k0s kubectl get pods
+  150  k0s kubectl port-forward -n kubeflow svc/ml-pipeline-ui 8080:80
+  151  k0s kubectl port-forward -n kubeflow svc/ml-pipeline-ui 8080:80
+  152  k0s kubectl port-forward -n kubeflow svc/ml-pipeline-ui 8086:80
+  153  python3 kubeflow_pipeline.py
+  154  nano kubeflow_pipeline.py
+  155  python3 kubeflow_pipeline.py
+  156  k0s kubectl port-forward -n kubeflow svc/ml-pipeline-ui 8086:80
+  157  cd project
+  158  k0s kubectl get podes
+  159  k0s kubectl get nodes
+  160  kubectl port-forward -n kubeflow svc/ml-pipeline-ui 8086:80
+  161  k0s kubectl port-forward -n kubeflow svc/ml-pipeline-ui 8086:80
+  162  python3 kubeflow_pipeline.py
+  163  k0s kubectl logs -n kubeflow -l app=ml-pipeline-ui
+  164  python3 kubeflow_pipeline.py
+  165  k0s kubectl logs -n kubeflow -l app=ml-pipeline-ui
+  166  chromium
+  167  cd project
+  168  git pull
+  169  clear
+  170  sudo apt update && sudo apt upgrade -y.
+  171  sudo apt update && sudo apt upgrade -y
+  172  sudo apt install xfce4 xfce4-goodies -y
+  173  sudo apt install xrdp -y
+  174  sudo systemctl start xrdp
+  175  sudo systemctl enable xrdp
+  176  sudo apt update
+  177  sudo apt install chromium
+  178  sudo update-alternatives --config x-www-browser
+  179  sudo update-alternatives --config gnome-www-browser
+  180  /usr/bin/chromium
+  181  sudo reboot
+  182  chromium
+  183  sudo su - chromium-user
+  184  sudo chromium --no-sandbox
+  185  cd project
+  186  ls
+  187  python3 real_estate.py
+  188  docker images
+  189  docker build -t trsanthosh/real_estate_train .
+  190  docker run -t trsanthosh/real_estate_train basc
+  191  docker run -t trsanthosh/real_estate_train bash
+  192  cd project
+  193  docker images
+  194  docker run -it trsanthosh/real_estate_train bash
+  195  ls
+  196  python3 kubeflow_pipeline.py
+  197  sudo adduser chromium-user
+  198  sudo su - chromium-user
+  199  ls
+  200  cd project
+  201  ls
+  202  k0s kubectl port-forward -n kubeflow svc/ml-pipeline-ui 8086:80
+  203   docker ps
+  204  ls
+  205  cat model-training-deployment.yaml
+  206  cat .bashrc
+  207  nano ~/.bashrc
+  208  source  ~/.bashrc
+  209  kubectl apply
+  210  ls
+  211  cat model-training-deployment.yaml
+  212  kubectl apply -f model-training-deployment.yaml
+  213  kubectl apply -f model-training-deployment.yaml --force
+  214  kubectl delete cronjob model-training-cronjob
+  215  kubectl apply -f model-training-deployment.yaml
+  216  kubectl get cronjobs
+  217  kubectl get jobs
+  218  kubectl describe job model-training-cronjob-28094080
+  219  kubectl kubectl logs model-training-cronjob-28094080-lfx98
+  220  kubectl logs model-training-cronjob-28094080-lfx98
+  221  kubectl get deployments
+  222  kubectl get pods
+  223  kubectl get services
+  224  curl -X POST -H "Content-Type: application/json" -d '{"sqft": 1000}' http://10.107.90.82:8000/predict
+  225  history
+  226  exit
+  227  cd project
+  228  cd serve
+  229  ls
+  230  cat model-serving-deployment.yaml
+  231  ls
+  232  cat main.py
+  233  ls
+  234  kubctl get services
+  235  kubectl get services
+  236  curl -X POST -H "Content-Type: application/json" -d '{"sqft": 1000}' http://10.107.90.82:8000/predict
+  237  clear
+  238  kubectl get services
+  239  curl -X POST -H "Content-Type: application/json" -d '{"sqft": 1000}' http://10.107.90.82:8000/predict
+  240  git pull
+  241  cat main.py
+  242  rm main.py
+  243  nano main.py
+  244  docker images
+  245  ls
+  246  cat model-serving-deployment.yaml
+  247  docker build -t trsanthosh/real_estate_serve:new .
+  248  docker push
+  249  docker push trsanthosh/real_estate_serve:new
+  250  ls
+  251  nano model-serving-deployment.yaml
+  252  kubectl get deployments
+  253  kubectl delete deployment model-serving-deployment
+  254  docker build -t trsanthosh/real_estate_serve:1.0 .
+  255  docker build -t trsanthosh/real_estate_serve:1.1 .
+  256  docker push trsanthosh/real_estate_serve:1.1
+  257  nano model-serving-deployment.yaml
+  258  kubectl apply -f model-serving-deployment.yaml
+  259  kubectl apply -f model-serving-deployment.yaml --force
+  260  kubectl delete service model-serving-service
+  261  kubectl apply -f model-serving-deployment.yaml
+  262  kubectl create service clusterip model-serving-service --tcp=8000:8000
+  263  kubectl delete service clusterip model-serving-service
+  264  kubectl delete service  model-serving-service
+  265  kubectl get services
+  266  kubectl create service clusterip model-serving-service --tcp=8000:8000
+  267  kubectl get services
+  268  curl -X POST -H "Content-Type: application/json" -d '{"area": 1000, "bedrooms": 2, "bathrooms": 1, "stories": 1, "parking": 1}' http://10.101.247.29:8000/predict
+  269  kubectl get deployments
+  270  kubectl get pods
+  271  kubectl logs model-serving-deployment-55fd587f9-k7m7t
+  272  kubectl get events
+  273  curl -X POST -H "Content-Type: application/json" -d '{"area": 1000, "bedrooms": 2, "bathrooms": 1, "stories": 1, "parking": 1}' http://10.101.247.29:8000/predict
+  274  curl -X POST -H "Content-Type: application/json" -d '{"area": 1000, "bedrooms": 2, "bathrooms": 1, "stories": 1, "parking": 1}' http://localhost:8000/predict
+  275  kubectl get services
+  276  curl -X get http://localhost:8000
+  277  curl -X get http://10.101.247.29:8000
+  278  exit
+  279  kubectl get services
+  280  curl -X get http://10.101.247.29:8000
+  281  history
+  282  history | frep k0s
+  283  history | grep k0s
+  284  kubectl logs model-training-deployment-7bb8bd6bf-rn4vx -c model-training-container
+  285  history | grep serv
+  286  kubectl get services
+  287  ubectl describe service model-serving-service
+  288  kubectl describe service model-serving-service
+  289  kubectl get deployments
+  290  kubectl get pods
+  291  cd project
+  292  kubectl get pods
+  293  kubectl get services
+  294  curl -X POST -H "Content-Type: application/json" -d '{"area": 1000, "bedrooms": 2, "bathrooms": 1, "stories": 1, "parking": 1}' http://10.98.142.190:8000/predict
+  295  kubectl get pods
+  296  kubectl get logs model-serving-deployment-769b6b44c4-k4brk
+  297  kubectl get log model-serving-deployment-769b6b44c4-k4brk
+  298  kubectl log model-serving-deployment-769b6b44c4-k4brk
+  299  kubectl logs model-serving-deployment-769b6b44c4-k4brk
+  300  cd serve
+  301  ls
+  302  cat model-serving-deployment.yaml
+  303  cat main.py
+  304  kubectl apply -f 
+  305  ls
+  306  cd ..
+  307  ls
+  308  kubectl apply -f model-training-deployment.yaml
+  309  ls \models
+  310  cd ..
+  311  ls
+  312  mv models models-old
+  313  mkdir models
+  314  cd models
+  315  ls
+  316  exit
+  317  dir models
+  318  ls models
+  319  ls
+  320  ls models/
+  321  kubectl getjobs
+  322  kubectl get jobs
+  323  kubectl get services
+  324  kubectl get pods
+  325  kubectl logs model-training-cronjob-28095210-7zbdp
+  326  ls
+  327  cd project
+  328  ls
+  329  ls model-training-deployment.yaml
+  330  cat model-training-deployment.yaml
+  331  cd /root/project/data
+  332  ls
+  333  cat real_estate.csv
+  334  kubectl logs model-training-cronjob-28095210-7zbdp
+  335  cd ..
+  336  cat model-training-deployment.yaml
+  337  pwd
+  338  ls
+  339  cat real_estate.py
+  340  dit pull
+  341  git pull
+  342  ls data
+  343  cat data/real_estate.csv
+  344  clear
+  345  docker images
+  346  docker build -t trsanthosh/real_estate_train .
+  347  docker push trsanthosh/real_estate_train
+  348  kubectl get deployments
+  349  kubectl delete deployment model-serving-deployment
+  350  ls
+  351  kubectl apply -f model-training-deployment.yaml
+  352  kubectl apply -f model-training-deployment.yaml --force
+  353  kubectl get jobs
+  354  kubectl get cronjobs
+  355  kubectl delete cronjob model-training-cronjob
+  356  kubectl apply -f model-training-deployment.yaml
+  357  ls
+  358  ls \root\models
+  359  cd ..
+  360  ls
+  361  ls models
+  362  kubectl get jobs
+  363  kubectl get pods
+  364  kubectl logs model-training-cronjob-28095230-jg79j
+  365  ls
+  366  cd models
+  367  ls
+  368  ls
+  369  cd ..
+  370  cd ..
+  371  ls
+  372  cd root
+  373  ls
+  374  ls models
+  375  cd project
+  376  ls
+  377  cat model-training-deployment.yaml
+  378  cd /models
+  379  ls
+  380  curl -X POST -H "Content-Type: application/json" -d '{"area": 1000, "bedrooms": 2, "bathrooms": 1, "stories": 1, "parking": 1}' http://10.98.142.190:8000/predict
+  381  history | grep kebectl
+  382  history | grep kubectl
+  383   kubectl get services
+  384   kubectl get service model-serving-service
+  385  curl -X POST -H "Content-Type: application/json" -d '{"area": 1000, "bedrooms": 2, "bathrooms": 1, "stories": 1, "parking": 1}' http://10.98.142.190:8000/predict
+  386   kubectl get pods
+  387  cd root
+  388  cd \root
+  389  \
+  390  cd cd root
+  391  /
+  392  cd /
+  393  cd root
+  394  cd project/serve
+  395  ls
+  396   kubectl get services
+  397   kubectl describe model-serving-service
+  398   kubectl logs  model-serving-service
+  399  history | grep kubectl
+  400  kubectl describe service model-serving-service
+  401  kubectl get deployments
+  402  ls
+  403  kubectl get services
+  404  kubectl delete service model-serving-service
+  405  ls
+  406  kubectl apply -f model-serving-deployment.yaml
+  407  kubectl describe service model-serving-service
+  408  curl -X POST -H "Content-Type: application/json" -d '{"area": 1000, "bedrooms": 2, "bathrooms": 1, "stories": 1, "parking": 1}' http://10.244.0.7:8000/predict
+  409  ls
+  410  exit
+  411  /
+  412  cd /
+  413  exit
+  414  cd project
+  415  ls
+  416  git pull
+  417  ls
+  418  kubectl apply -f dashboard-adminuser.yaml
+  419  kubectl -n kubernetes-dashboard create token admin-user
+  420  git pull
+  421  kubectl apply -f clusterrolebinding.yaml
+  422  kubectl -n kubernetes-dashboard create token admin-user
+  423  exit
+  424  cd project
+  425  kubectl get deployments
+  426  git pull
+  427  ls
+  428  docker images
+  429  docker build -trsanthosh/real_estate_train .
+  430  docker docker build -t trsanthosh/real_estate_train .
+  431  docker build -t trsanthosh/real_estate_train .
+  432  docker push trsanthosh/real_estate_train
+  433  ls
+  434  kubectl apply -f model-training-deployment.yaml
+  435  kubectl delete cronjob cronjob.batch/model-training-cronjob
+  436  kubectl delete cronjob model-training-cronjob
+  437  kubectl apply -f model-training-deployment.yaml
+  438  kubectl ket jobs
+  439  kubectl get jobs
+  440  kubectl get jobs
+  441  kubectl logs model-training-cronjob-28097000
+  442  kubectl get pods
+  443  kubectl logs model-training-cronjob-28097000-86fdg
+  444  kubectl logs model-training-cronjob-28097000-86fdg
+  445  ls
+  446  cat Dockerfile
+  447  kubectl get pods
+  448  kubectl logs model-training-cronjob-28097000-86fdg
+  449  ls
+  450  cat train.py
+  451  cat test.py
+  452  kubectl logs model-training-cronjob-28097000-86fdg
+  453  git pull
+  454  docker build -t trsanthosh/real_estate_train .
+  455  docker push trsanthosh/real_estate_train
+  456  kubectl get deployments
+  457  kubectl delete cronjob model-training-cronjob
+  458  kubectl apply -f model-training-deployment.yaml
+  459  kubectl get pods
+  460  kubectl get pods
+  461  kubectl get pods
+  462  kubectl get pods
+  463  kubectl get pods
+  464  kubectl get logs model-training-cronjob-28097020-bbrvq   
+  465  kubectl  logs model-training-cronjob-28097020-bbrvq   
+  466  kubectl delete cronjob model-training-cronjob
+  467  git pull
+  468  docker build -t trsanthosh/real_estate_train .
+  469  docker push trsanthosh/real_estate_train
+  470  kubectl apply -f model-training-deployment.yaml
+  471  kubectl get pods
+  472  kubectl get pods
+  473  kubectl logs model-serving-deployment-769b6b44c4-nfqk6
+  474  kubectl get pods
+  475  kubectl logs model-training-cronjob-28097030-zxjlx
+  476  git pull
+  477  kubectl delete cronjob model-training-cronjob
+  478  docker build -t trsanthosh/real_estate_train .
+  479  docker push trsanthosh/real_estate_train
+  480  kubectl apply -f model-training-deployment.yaml
+  481  kubectl get pods
+  482  kubectl get pods
+  483  kubectl logs model-training-cronjob-28097040-vgkcg
+  484  kubectl logs model-training-cronjob-28097040-vgkcg
+  485  kubectl logs model-training-cronjob-28097040-vgkcg
+  486  kubectl proxy
+  487  kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/aio/deploy/recommended.yaml
+  488  kubectl get pods -n kubernetes-dashboard
+  489  kubectl proxy
+  490  kubectl get pods -n kubernetes-dashboard
+  491  kubectl proxy
+  492  exit
+  493  kubectl proxy
+  494  exit
+  495  kubectl -n kubernetes-dashboard create token admin-user
+  496  history | grep service
+  497  ubectl describe service model-serving-service
+  498  kubectl describe service model-serving-service
+  499  exit
+  500  cd project
+  501  history > commands
